@@ -1,11 +1,10 @@
 # LA1303
-# ASCIISnakeGame
 
 ### Beschreibung
 
 Unsere Gruppe bestaht aus Justus Meister, Fabian Meyer und Elias Spycher
 
-Wie wollen einen Musikplayer erstellen, man sollte Musik abspielen, pausieren, vorspulen, überspringen 
+Wie wollen einen Musikplayer erstellen, man sollte Musik abspielen, pausieren, vorspulen und überspringen können. Wir erstellen das Backend und Frontend mit Visual Studio mittels Node.js.
 
 ### User Stories
 
@@ -14,8 +13,8 @@ Wie wollen einen Musikplayer erstellen, man sollte Musik abspielen, pausieren, v
 | 1    |Muss             |Funktional|Ich will als Benutzer einen Play Button haben um einen SOng abzuspielen, um Musik hören zu können.|
 | 2    |Muss             |Funktional|Ich will als Benutzer einen Song skippen können, um den Song nicht zu Ende hören müssen.|
 | 3    |Muss             |Funktional|Ich will als Benutzer einen Song pausieren können, um den Player zu pasuieren.|
-| 4    |Muss             |Funktional||
-| 5    |Muss             |Funktional||
+| 4    |Muss             |Funktional|Ich will als Benutzer von meinem Dateisystem ein Lied hochladen können, um meine eigene Musik zu spielen.|
+| 5    |Muss             |Funktional|Ich will als Benutzer eine kleine Einleitung in den Musikplayer bekommen, damit ich weiss wie es funktioniert.|
 | 6    |Muss             |Funktional||
 | 7    |Muss             |Funktional||
 | 8    |Muss             |Funktional||
