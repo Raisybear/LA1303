@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mein Musikplayer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Willkommen beim Musikplayer</h1>
+    </header>
+
+    <main>
+      <div class="tutorial">
+        <h2>Benutzerhandbuch</h2>
+        <p>1. Klicke auf "Hinzufügen", um einen Song auszuwählen.</p>
+        <p>2. Der Song wird zur Playlist hinzugefügt.</p>
+        <p>3. Klicke auf einen Song in der Playlist, um ihn abzuspielen.</p>
+        <p>
+          4. Benutze die Buttons "Play" und "Pause" für die Wiedergabesteuerung.
+        </p>
+      </div>
+
+      <div class="musik-player">
+        <input type="file" id="dateiInput" />
+        <button id="hinzufuegenButton">Hinzufügen</button>
+        <button id="playButton" disabled>Play</button>
+        <button id="pauseButton" disabled>Pause</button>
+        <ul id="playlist"></ul>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Mein Musikplayer</p>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
