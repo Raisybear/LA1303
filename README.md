@@ -10,7 +10,7 @@ Wie wollen einen Musikplayer erstellen, man sollte Musik abspielen, pausieren, v
 
 | US-№ | Verbindlichkeit | Typ  | Beschreibung                       |
 | ---- | --------------- | ---- | ---------------------------------- |
-| 1    |Muss             |Funktional|Ich will als Benutzer einen Play Button haben um einen SOng abzuspielen, um Musik hören zu können.|
+| 1    |Muss             |Funktional|Ich will als Benutzer einen Play Button haben um einen Song abzuspielen, um Musik hören zu können.|
 | 2    |Muss             |Funktional|Ich will als Benutzer einen Song skippen können, um den Song nicht zu Ende hören müssen.|
 | 3    |Muss             |Funktional|Ich will als Benutzer einen Song pausieren können, um den Player zu pasuieren.|
 | 4    |Muss             |Funktional|Ich will als Benutzer von meinem Dateisystem ein Lied hochladen können, um meine eigene Musik zu spielen.|
@@ -35,8 +35,8 @@ Wie wollen einen Musikplayer erstellen, man sollte Musik abspielen, pausieren, v
 
 | US-№ | Datum           | Arbeitspaket  | Verantwortliche Person                       |
 | ---- | --------------- | ---- | ---------------------------------- |
-| -    | 17.11.2023           |Projekt wählen und Planung erstellen| Elias Spycher |
-| 1    | 24.11.2023           |Menu erstellen | Elias Spycher |
+| -    | 17.11.2023           |Projekt wählen und Planung erstellen| Elias Spycher und Justus Meister |
+| 1    | 24.11.2023           |Grundlegene Funktion Musik abzuspielen über Knopfdruck| Elias Spycher |
 | 2    | 24.11.2023           |Menu Navigation erstellen | Elias Spycher |
 | 3    | 01.12.2023           |Spielfeld erstellen| Elias Spycher |
 | 4    | 01.12.2023           |Navigation der Schlange erstellen  | Elias Spycher |
