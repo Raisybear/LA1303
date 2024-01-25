@@ -49,3 +49,54 @@ Wie wollen einen Musikplayer erstellen, man sollte Musik abspielen, pausieren, v
 | 11    | 15.12.2023           |Äpfel positionieren und Score zuweisen| Elias Spycher |
 | 12    | 15.12.2023           |Schlangenwachstum erstellen| Elias Spycher |
 | -    | 22.12.2023           |Portfolioeintrag schreiben| Elias Spycher |
+
+### Testfälle
+
+| TC-№ | Ausgangslage | Eingabe | Erwartete Ausgabe |
+| ---- | ------------ | ------- | ----------------- |
+| 1.1  | Programm gestartet|-|Es wird mittels eines Textes kurz erklärt wie man den Musikplayer bedient |
+| 2.1  | Programm gestartet|Button für Dateisystem drücken|Explorer öffent sich|
+| 2.1  | Explorer geöffnet|MP3 Datei ausgewählt  |Datei wird zur queue hinzugefügt|
+| 2.1  | Datei in Queue vorhanden|  ||
+| 2.1  | |  ||
+| 2.1  | |  ||
+| 2.1  | |  ||
+| 2.1  | |  ||
+| 2.1  | |  ||
+| 2.1  | |  ||
+| 2.1  | |  ||
+
+### Testprotokoll
+
+| TC-№ | Datum | Resultat | Tester |
+| ---- | ----- | -------- | ------ |
+| 1.1.1  |11.01.2023|OK|Elias Spycher|
+| 2.2.1  |11.01.2023|OK|Elias Spycher|
+| 3.2.2  |11.01.2023|OK|Elias Spycher|
+| 4.4.1  |11.01.2023|OK|Elias Spycher|
+| 5.5.1  |11.01.2023|OK|Elias Spycher|
+| 6.6.1  |11.01.2023|OK|Elias Spycher|
+| 7.6.2  |11.01.2023|OK|Elias Spycher|
+| 8.6.3  |11.01.2023|OK|Elias Spycher|
+| 9.6.4  |11.01.2023|OK|Elias Spycher|
+| 10.6.5  |11.01.2023|OK|Elias Spycher|
+| 11.6.6  |11.01.2023|OK|Elias Spycher|
+| 12.6.7  |11.01.2023|OK|Elias Spycher|
+| 13.6.8 |11.01.2023|OK|Elias Spycher|
+| 14.6.9  |11.01.2023|OK|Elias Spycher|
+| 14.6.10  |11.01.2023|OK|Elias Spycher|
+| 15.7.1  |11.01.2023|OK|Elias Spycher|
+| 16.8.1  |11.01.2023|OK|Elias Spycher|
+| 17.8.2  |11.01.2023|OK|Elias Spycher|
+| 18.8.3  |11.01.2023|OK|Elias Spycher|
+| 19.8.4  |11.01.2023|OK|Elias Spycher|
+| 20.9.1  |11.01.2023|OK|Elias Spycher|
+| 21.10.1  |11.01.2023|OK|Elias Spycher|
+| 22.11.1  |11.01.2023|OK|Elias Spycher|
+| 23.11.2  |11.01.2023|OK|Elias Spycher|
+| 24.11.3  |11.01.2023|OK|Elias Spycher|
+| 25.12.1  |11.01.2023|NOK|Elias Spycher|
+
+### Testbericht
+
+Es funktionieren alle Testfälle ausser der Letzte. Das Projekt konnte vollständig implemntiert werden ausser die Funktion, dass die Schlange länger wird bei jedem Apfel.
