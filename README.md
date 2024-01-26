@@ -12,59 +12,46 @@ Wie wollen einen Musikplayer erstellen, man sollte Musik abspielen, pausieren, v
 | ---- | --------------- | ---- | ---------------------------------- |
 | 1    |Muss             |Funktional|Ich will als Benutzer einen Play Button haben um einen Song abzuspielen, um Musik hören zu können.|
 | 2    |Muss             |Funktional|Ich will als Benutzer einen Song skippen können, um den Song nicht zu Ende hören müssen.|
-| 3    |Muss             |Funktional|Ich will als Benutzer einen Song pausieren können, um den Player zu pasuieren.|
+| 3    |Muss             |Funktional|Ich will als Benutzer einen Song pausieren können, um den Player zu pausieren.|
 | 4    |Muss             |Funktional|Ich will als Benutzer von meinem Dateisystem ein Lied hochladen können, um meine eigene Musik zu spielen.|
 | 5    |Muss             |Funktional|Ich will als Benutzer eine kleine Einleitung in den Musikplayer bekommen, damit ich weiss wie es funktioniert.|
-| 6    |Muss             |Funktional||
-| 7    |Muss             |Funktional||
-| 8    |Muss             |Funktional||
-| 9    |Muss             |Funktional||
-| 10    |Muss             |Funktional||
-| 11    |Muss             |Funktional||
-| 12    |Muss             |Funktional||
-| 13    |Muss             |Funktional||
-| 14    |Muss             |Funktional||
-| 15    |Muss             |Funktional||
-| 16    |Muss             |Funktional||
-| 17    |Muss             |Funktional||
-| 18    |Muss             |Funktional||
-| 19    |Muss             |Funktional||
-| 20    |Muss             |Funktional||
+| 6    |Muss             |Funktional|Ich will als Benutzer die Queue mit einem Button leeren können, um neue Musik hinzufügen zu können.|
+| 7    |Muss             |Funktional|Ich will als Benutzer, dass der nächste Song automatisch abgespielt wird, sobald der vorherige Zuende ist, dass ich selber nichts machen muss.|
+| 8    |Kann             |Funktional|Ich will als benutzer die Lautstärke regulieren können, um meinen Ohren einen gefallen zu machen.|
 
-### Planen
-
-| US-№ | Datum           | Arbeitspaket  | Verantwortliche Person                       |
-| ---- | --------------- | ---- | ---------------------------------- |
-| -    | 17.11.2023           |Projekt wählen und Planung erstellen| Elias Spycher und Justus Meister |
-| 1    | 24.11.2023           |Grundlegene Funktion Musik abzuspielen über Knopfdruck| Elias Spycher |
-| 2    | 24.11.2023           |Menu Navigation erstellen | Elias Spycher |
-| 3    | 01.12.2023           |Spielfeld erstellen| Elias Spycher |
-| 4    | 01.12.2023           |Navigation der Schlange erstellen  | Elias Spycher |
-| 5    | 01.12.2023           |Navigation des speziellen Modus erstellen  | Elias Spycher |
-| 6    | 01.12.2023           |Bedienung der Schlange durch Tasteneingaben erstellen  | Elias Spycher |
-| 7    | 08.12.2023           |ESC/Death Menu erstellen  | Elias Spycher |
-| 8    | 08.12.2023           |Bedienung des ESC/Death Menu erstellen| Elias Spycher |
-| 9    | 08.12.2023           |Kollision der Schlange mit Wand erstellen| Elias Spycher |
-| 10    | 15.12.2023           |Score nach dem Spiel anzeigen implementieren| Elias Spycher |
-| 11    | 15.12.2023           |Äpfel positionieren und Score zuweisen| Elias Spycher |
-| 12    | 15.12.2023           |Schlangenwachstum erstellen| Elias Spycher |
-| -    | 22.12.2023           |Portfolioeintrag schreiben| Elias Spycher |
 
 ### Testfälle
 
 | TC-№ | Ausgangslage | Eingabe | Erwartete Ausgabe |
 | ---- | ------------ | ------- | ----------------- |
-| 1.1  | Programm gestartet|-|Es wird mittels eines Textes kurz erklärt wie man den Musikplayer bedient |
-| 2.1  | Programm gestartet|Button für Dateisystem drücken|Explorer öffent sich|
-| 2.1  | Explorer geöffnet|MP3 Datei ausgewählt  |Datei wird zur queue hinzugefügt|
-| 2.1  | Datei in Queue vorhanden|  ||
+| 5.1  | Programm gestartet|-|Es wird mittels eines Textes kurz erklärt wie man den Musikplayer bedient |
+| 4.1  | Programm gestartet|Button für Dateisystem drücken|Explorer öffent sich|
+| 4.2  | Explorer geöffnet|MP3 Datei ausgewählt  |Datei wird zur queue hinzugefügt|
+| 1.1  | Datei in Queue vorhanden| Play Button Clicken |Erster Song wird abgespielt|
+| 2.1  | Song wird abgespielt |Skip Button Clicken |Song wird geskippt, der nächste In der Queue wird abgespielt|
+| 3.1  | Song wird abgespielt |Pause Button Clicken  |Song wird pausiert|
+| 3.2  | Song wurde pausiert| Play Botton/Pause Button Clicken |Song wird weitergespielt|
+| 6.1  | Songs in Queue vorhanden|Clear Queue Button Clicken  |Queue wird gelöscht|
+| 7.1  | Song in Queue zu Ende |-|Nächster Song wird abgespielt|
 | 2.1  | |  ||
 | 2.1  | |  ||
-| 2.1  | |  ||
-| 2.1  | |  ||
-| 2.1  | |  ||
-| 2.1  | |  ||
-| 2.1  | |  ||
+
+### Planen
+
+| US-№ | Datum           | Arbeitspaket  | Verantwortliche Person                       |
+| ---- | --------------- | ---- | ---------------------------------- |
+| -    | 18.01.2024           |Projekt Idee wählen| Elias Spycher und Justus Meister |
+| -    | 19.01.2024           |Userstories, Testfälle und Planung erstellen| Elias Spycher |
+| 1    | 19.01.2024           |Grundlegene Funktion Musik abzuspielen über Knopfdruck| Elias Spycher, Justus Meister |
+| 2    | 18.01.2024           |Musikplayer pausieren können| Justus Meister |
+| 3    | 18.01.2024           ||  |
+| 3    | 18.01.2024           ||  |
+| 3    | 18.01.2024           ||  |
+| 3    | 18.01.2024           ||  |
+| 3    | 18.01.2024           ||  |
+| 3    | 18.01.2024           ||  |
+| 3    | 18.01.2024           ||  |
+| 3    | 18.01.2024           ||  |
 
 ### Testprotokoll
 
