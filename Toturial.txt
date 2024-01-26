@@ -1,2 +1,2 @@
 
-use 'node public/server.js' in the directory terminal to run the server
+use 'node public/server.js' in the directory terminal to run the server, and open the link for the website
