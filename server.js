@@ -1,70 +1,24 @@
-const express = require("express");
-const cors = require("cors");
-const multer = require("multer");
-const winston = require("winston");
-const path = require("path");
-const fs = require("fs");
+const express = require('express');
+const multer = require('multer');
+const fs = require('fs');
+const path = require('path');
 
 const app = express();
-const PORT = 3000;
+const upload = multer({ dest: 'public/uploads/' });
 
-const logger = winston.createLogger({
-  level: "info",
-  format: winston.format.simple(),
-  transports: [
-    new winston.transports.Console(),
-    new winston.transports.File({ filename: "logfile.log" }),
-  ],
+app.use(express.static('public'));
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-app.use(cors());
-
-const storage = multer.memoryStorage();
-const upload = multer({ storage: storage });
-
-// Pfad zum Musikordner
-const musikOrdner = path.join(__dirname, "Musik samples");
-
-app.get("/musikdateien", (req, res) => {
-  logger.info("GET-Anfrage für Musikdateien empfangen.");
-
-  fs.readdir(musikOrdner, (err, files) => {
-    if (err) {
-      logger.error("Fehler beim Lesen des Musikordners:", err);
-      return res.status(500).json({ error: "Interner Serverfehler" });
-    }
-
-    const musikdateien = files.map((file) => ({ titel: file }));
-
-    res.json(musikdateien);
-  });
+app.post('/upload', upload.single('file'), (req, res) => {
+    const file = req.file;
+    const audioPath = path.join('public', 'music', file.originalname);
+    fs.renameSync(file.path, audioPath);
+    res.send('File uploaded successfully.');
 });
 
-app.post(
-  "/musikdateien/hinzufuegen",
-  upload.single("musikdatei"),
-  (req, res) => {
-    logger.info("POST-Anfrage für das Hinzufügen einer Musikdatei empfangen.");
-
-    if (!req.file) {
-      logger.error("Keine Datei empfangen.");
-      return res.status(400).json({ error: "Keine Datei empfangen." });
-    }
-
-    if (req.file.mimetype !== "audio/mpeg") {
-      logger.error("Ungültiger Dateityp. Nur MP3-Dateien sind erlaubt.");
-      return res
-        .status(400)
-        .json({ error: "Ungültiger Dateityp. Nur MP3-Dateien sind erlaubt." });
-    }
-
-    const dateiSpeicherort = path.join(musikOrdner, req.file.originalname);
-    fs.writeFileSync(dateiSpeicherort, req.file.buffer);
-
-    res.json({ success: true });
-  }
-);
-
-app.listen(PORT, () => {
-  logger.info(`Server läuft auf http://localhost:${PORT}`);
+app.listen(3000, () => {
+    console.log('Server listening on port 3000.');
 });

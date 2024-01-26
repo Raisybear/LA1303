@@ -1,115 +1,69 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const audioContext = new (window.AudioContext || window.webkitAudioContext)(); // AudioContext erstellen
+const player = document.querySelector('.player');
+const audio = document.querySelector('.audio');
+const prev = player.querySelector('.prev');
+const play = player.querySelector('.play');
+const pause = player.querySelector('.pause');
+const next = player.querySelector('.next');
+const seek = player.querySelector('.seek');
+const volume = player.querySelector('.volume');
+const currentTime = player.querySelector('.current-time');
+const duration = player.querySelector('.duration');
 
-  const playButton = document.getElementById("playButton");
-  const pauseButton = document.getElementById("pauseButton");
-  const dateiInput = document.getElementById("dateiInput");
-  const hinzufuegenButton = document.getElementById("hinzufuegenButton");
-  const playlist = document.getElementById("playlist");
+audio.ontimeupdate = function() {
+    const currentTimeValue = audio.currentTime;
+    const durationValue = audio.duration;
+    seek.value = (currentTimeValue / durationValue) * 100;
+    currentTime.textContent = formatTime(currentTimeValue);
+};
 
-  let audioBuffer = null;
-  let audioSource = null;
-  let songCounter = 1; // Zähler für den Song-Index
+audio.onloadedmetadata = function() {
+    duration.textContent = formatTime(audio.duration);
+};
 
-  // Musik abspielen
-  const playMusic = () => {
-    if (audioBuffer && !audioSource) {
-      audioSource = audioContext.createBufferSource();
-      audioSource.buffer = audioBuffer;
-      audioSource.connect(audioContext.destination);
-      audioSource.start();
+seek.onchange = function() {
+    const seekValue = seek.value;
+    const durationValue = audio.duration;
+    audio.currentTime = (seekValue / 100) * durationValue;
+};
 
-      playButton.disabled = true;
-      pauseButton.disabled = false;
+volume.onchange = function() {
+    audio.volume = volume.value / 100;
+};
 
-      // Event-Listener für das Ende der Wiedergabe, um die Schaltflächen zurückzusetzen
-      audioSource.addEventListener("ended", () => {
-        audioSource = null;
-        playButton.disabled = false;
-        pauseButton.disabled = true;
-      });
+play.onclick = function() {
+    audio.play();
+};
+
+pause.onclick = function() {
+    audio.pause();
+};
+
+prev.onclick = function() {
+    const currentSrc = audio.src;
+    const currentIndex = currentSrc.lastIndexOf('/') + 1;
+    const currentFileName = currentSrc.slice(currentIndex);
+    const files = ['music1.mp3', 'music2.mp3', 'music3.mp3'];
+    const nextIndex = files.indexOf(currentFileName) - 1;
+    if (nextIndex >= 0) {
+        audio.src = `/music/${files[nextIndex]}`;
+        audio.play();
     }
-  };
+};
 
-  // Musik pausieren
-  const pauseMusic = () => {
-    if (audioSource) {
-      audioSource.stop();
-      audioSource = null;
-
-      playButton.disabled = false;
-      pauseButton.disabled = true;
+next.onclick = function() {
+    const currentSrc = audio.src;
+    const currentIndex = currentSrc.lastIndexOf('/') + 1;
+    const currentFileName = currentSrc.slice(currentIndex);
+    const files = ['music1.mp3', 'music2.mp3', 'music3.mp3'];
+    const nextIndex = files.indexOf(currentFileName) + 1;
+    if (nextIndex < files.length) {
+        audio.src = `/music/${files[nextIndex]}`;
+        audio.play();
     }
-  };
+};
 
-  // Stoppe die Musik
-  const stopMusic = () => {
-    if (audioSource) {
-      audioSource.stop();
-      audioSource = null;
-
-      playButton.disabled = false;
-      pauseButton.disabled = true;
-    }
-  };
-
-  // Lade eine Musikdatei (ohne automatische Wiedergabe)
-  const loadMusic = async () => {
-    try {
-      stopMusic(); // Stoppe den aktuellen Song, falls vorhanden
-
-      const response = await fetch(
-        "http://localhost:3000/musikdateien/1/stream"
-      ); // Beispiel-URL für Musikdatei
-      const arrayBuffer = await response.arrayBuffer();
-      audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
-
-      playButton.disabled = false;
-      pauseButton.disabled = true;
-    } catch (error) {
-      console.error("Fehler beim Laden der Musik:", error);
-    }
-  };
-
-  // Event-Listener für Play- und Pause-Buttons
-  playButton.addEventListener("click", playMusic);
-  pauseButton.addEventListener("click", pauseMusic);
-
-  // Lade die Musik beim Seitenladen
-  loadMusic();
-
-  // Event-Listener für Hinzufügen-Button
-  hinzufuegenButton.addEventListener("click", () => {
-    dateiInput.click(); // Öffne den Dateiauswahldialog, wenn auf den Hinzufügen-Button geklickt wird
-  });
-
-  // Event-Listener für Dateiauswahl
-  dateiInput.addEventListener("change", async () => {
-    const selectedFile = dateiInput.files[0];
-
-    if (selectedFile) {
-      try {
-        const arrayBuffer = await selectedFile.arrayBuffer();
-        audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
-
-        loadMusic(); // Lade die Musik neu, um den aktuellen Song zu setzen
-        playMusic(); // Starte die Wiedergabe
-
-        // Füge den Song zur Playlist hinzu
-        const playlistItem = document.createElement("li");
-        playlistItem.textContent = selectedFile.name; // Nutze den Dateinamen als Titel
-        playlist.appendChild(playlistItem);
-
-        // Füge einen Event-Listener zum Abspielen des Songs in der Playlist hinzu
-        playlistItem.addEventListener("click", () => {
-          loadMusic(); // Lade die Musik neu, um den aktuellen Song zu setzen
-          playMusic(); // Starte die Wiedergabe
-        });
-
-        songCounter++;
-      } catch (error) {
-        console.error("Fehler beim Laden der ausgewählten Datei:", error);
-      }
-    }
-  });
-});
+function formatTime(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const secondsLeft = Math.floor(seconds % 60);
+    return `${minutes}:${secondsLeft < 10 ? '0' : ''}${secondsLeft}`;
+}
