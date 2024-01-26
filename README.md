@@ -47,11 +47,13 @@ Wie wollen einen Musikplayer erstellen, man sollte Musik abspielen, pausieren, v
 | 3    | 26.01.2024 | Musik pausieren können                                 | Justus Meister                   |
 | 4    | 26.01.2024 | Musik von Dateisystem verwenden                        | Fabian Meyer                     |
 | 5    | 26.01.2024 | Einleitung über den Musikplayer                        | Elias Spycher                    |
-| 6    | 26.01.2024 | Songs werden in Queue gespeichert,                     |                                  |
-| 7    | 02.02.2024 | Testen und Testprotokoll ausfüllen                     | Elias Spycher                    |
-| 8    | 18.01.2024 |                                                        |                                  |
-| 9    | 18.01.2024 |                                                        |                                  |
-| 3    | 18.01.2024 |                                                        |                                  |
+| 6    | 26.01.2024 | Songs werden in Queue gespeichert                      | Fabian Meyer                     |
+| 7    | 26.01.2024 | Abspielen des nächsten Songs automatisieren            | Fabian Meyer                     |
+| 8    | 26.01.2024 | Lautstärken Regler erstellen                           | Fabian Meyer                     |
+| 9    | 02.02.2024 | Testen und Testprotokoll ausfüllen                     | Elias Spycher                    |
+| 10   | 18.01.2024 |                                                        |                                  |
+| 11   | 18.01.2024 |                                                        |                                  |
+| 12   | 18.01.2024 |                                                        |                                  |
 
 ### Testprotokoll
 
