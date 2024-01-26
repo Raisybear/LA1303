@@ -11,8 +11,8 @@ const duration = player.querySelector('.duration');
 const trackUpload = document.getElementById('trackUpload');
 const uploadButton = document.querySelector('.upload');
 
-// List of songs in the queue
-const playlist = ['music1.mp3', 'music2.mp3', 'music3.mp3'];
+
+const playlist = [''];
 let currentSongIndex = 0;
 
 audio.ontimeupdate = function () {
@@ -61,7 +61,6 @@ trackUpload.onchange = function () {
 };
 
 audio.onended = function () {
-    // Play the next song in the queue when the current one ends
     playSongByIndex(currentSongIndex + 1);
 };
 
@@ -86,9 +85,7 @@ function uploadSong(files) {
             .then(response => response.text())
             .then(message => {
                 console.log(message);
-                // Add the uploaded song to the playlist
                 playlist.push(file.name);
-                // If no song is currently playing, start playing the uploaded song
                 if (audio.paused) {
                     playSongByIndex(playlist.indexOf(file.name));
                 }
