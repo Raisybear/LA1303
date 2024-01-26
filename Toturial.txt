@@ -1,5 +1,6 @@
 npm install express
 npm install multer
-node server.js
 npm install winston
 npm install cors
+
+node server.js
