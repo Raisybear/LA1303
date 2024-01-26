@@ -71,4 +71,4 @@ Wie wollen einen Musikplayer erstellen, man sollte Musik abspielen, pausieren, v
 
 ### Testbericht
 
-Es funktionieren alle Testfälle ausser der Letzte. Das Projekt konnte vollständig implemntiert werden ausser die Funktion, dass die Schlange länger wird bei jedem Apfel.
+Das Projekt funktioniert ziemlich fehlerfrei.
