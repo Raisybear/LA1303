@@ -1,6 +1,2 @@
-npm install express
-npm install multer
-npm install winston
-npm install cors
 
-node server.js
+use 'node public/server.js' in the directory terminal to run the server
