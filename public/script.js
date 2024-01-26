@@ -13,7 +13,7 @@ const uploadButton = document.querySelector('.upload');
 
 
 const playlist = [''];
-let currentSongIndex = 0;
+let currentSongIndex = 1;
 
 audio.ontimeupdate = function () {
     const currentTimeValue = audio.currentTime;
