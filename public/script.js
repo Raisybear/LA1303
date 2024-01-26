@@ -8,59 +8,94 @@ const seek = player.querySelector('.seek');
 const volume = player.querySelector('.volume');
 const currentTime = player.querySelector('.current-time');
 const duration = player.querySelector('.duration');
+const trackUpload = document.getElementById('trackUpload');
+const uploadButton = document.querySelector('.upload');
 
-audio.ontimeupdate = function() {
+// List of songs in the queue
+const playlist = ['music1.mp3', 'music2.mp3', 'music3.mp3'];
+let currentSongIndex = 0;
+
+audio.ontimeupdate = function () {
     const currentTimeValue = audio.currentTime;
     const durationValue = audio.duration;
     seek.value = (currentTimeValue / durationValue) * 100;
     currentTime.textContent = formatTime(currentTimeValue);
 };
 
-audio.onloadedmetadata = function() {
+audio.onloadedmetadata = function () {
     duration.textContent = formatTime(audio.duration);
 };
 
-seek.onchange = function() {
+seek.onchange = function () {
     const seekValue = seek.value;
     const durationValue = audio.duration;
     audio.currentTime = (seekValue / 100) * durationValue;
 };
 
-volume.onchange = function() {
+volume.onchange = function () {
     audio.volume = volume.value / 100;
 };
 
-play.onclick = function() {
-    audio.play();
-};
-
-pause.onclick = function() {
-    audio.pause();
-};
-
-prev.onclick = function() {
-    const currentSrc = audio.src;
-    const currentIndex = currentSrc.lastIndexOf('/') + 1;
-    const currentFileName = currentSrc.slice(currentIndex);
-    const files = ['music1.mp3', 'music2.mp3', 'music3.mp3'];
-    const nextIndex = files.indexOf(currentFileName) - 1;
-    if (nextIndex >= 0) {
-        audio.src = `/music/${files[nextIndex]}`;
+play.onclick = function () {
+    if (audio.paused) {
         audio.play();
+    } else {
+        audio.pause();
     }
 };
 
-next.onclick = function() {
-    const currentSrc = audio.src;
-    const currentIndex = currentSrc.lastIndexOf('/') + 1;
-    const currentFileName = currentSrc.slice(currentIndex);
-    const files = ['music1.mp3', 'music2.mp3', 'music3.mp3'];
-    const nextIndex = files.indexOf(currentFileName) + 1;
-    if (nextIndex < files.length) {
-        audio.src = `/music/${files[nextIndex]}`;
+prev.onclick = function () {
+    playSongByIndex(currentSongIndex - 1);
+};
+
+next.onclick = function () {
+    playSongByIndex(currentSongIndex + 1);
+};
+
+uploadButton.onclick = function () {
+    trackUpload.click();
+};
+
+trackUpload.onchange = function () {
+    uploadSong(trackUpload.files);
+};
+
+audio.onended = function () {
+    // Play the next song in the queue when the current one ends
+    playSongByIndex(currentSongIndex + 1);
+};
+
+function playSongByIndex(index) {
+    if (index >= 0 && index < playlist.length) {
+        currentSongIndex = index;
+        audio.src = `/music/${playlist[currentSongIndex]}`;
         audio.play();
     }
-};
+}
+
+function uploadSong(files) {
+    const file = files[0];
+    if (file) {
+        const formData = new FormData();
+        formData.append('file', file);
+
+        fetch('/upload', {
+            method: 'POST',
+            body: formData,
+        })
+            .then(response => response.text())
+            .then(message => {
+                console.log(message);
+                // Add the uploaded song to the playlist
+                playlist.push(file.name);
+                // If no song is currently playing, start playing the uploaded song
+                if (audio.paused) {
+                    playSongByIndex(playlist.indexOf(file.name));
+                }
+            })
+            .catch(error => console.error('Error uploading song:', error));
+    }
+}
 
 function formatTime(seconds) {
     const minutes = Math.floor(seconds / 60);
