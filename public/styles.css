@@ -73,7 +73,9 @@ header {
   text-align: center;
   background-color: #2ca4c9;
   padding: 5px;
-  font-size: 20px;
+
+  font-family: arial, "lucida console", sans-serif;
+  font-size: 30px;
 }
 
 #halloText {
