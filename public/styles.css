@@ -75,7 +75,7 @@ header {
   background-color: #2ca4c9;
   padding: 5px;
   font-size: 30px;
-  background: linear-gradient(to right, #ff0000, #00ff00);
+  background: linear-gradient(to right, #a6e1e5, #41b2d6);
 }
 
 #halloText {
@@ -83,7 +83,8 @@ header {
   text-align: center;
   background-color: #a7e2e6;
   padding: 10px;
-  background: linear-gradient(to left, #ff0000, #00ff00);
+  background: linear-gradient(to left, #a6e1e5, #41b2d6);
+  border-top: 3px solid #062f67;
 }
 
 .TopBar {
@@ -97,6 +98,7 @@ header {
   position: relative;
   list-style: none;
   text-align: center;
+  border-bottom: 3px solid #062f67;
 }
 
 .TopBar li {
