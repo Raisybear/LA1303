@@ -5,11 +5,14 @@
     <link rel="stylesheet" type="text/css" href="/styles.css" />
   </head>
   <body>
+    <header>Musikplayer</header>
+
     <div id="halloText">
-      Willkommen beim Musikplayer, navigiere mittels den Buttons zwischen den
-      verschiedenen Songs, du kannst Songs hochladen indem du den Dateien suchen
-      Button benutzt.
+      Willkommen beim Musikplayer <br />
+      Navigiere mittels den Buttons zwischen den verschiedenen Songs, <br />
+      du kannst Songs hochladen indem du den Dateien suchen Button benutzt.
     </div>
+
     <div class="player">
       <button class="prev">Previous</button>
       <button class="play">Play/Pause</button>
@@ -27,6 +30,9 @@
       accept=".wav, .mp3"
       onchange="uploadSong(this.files)"
     />
-    <footer>Musikplayer registered Trademark</footer>
+    <footer>
+      Musikplayer <br />
+      registered Trademark
+    </footer>
   </body>
 </html>
