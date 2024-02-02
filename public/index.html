@@ -26,15 +26,27 @@
     </div>
 
     <div class="player">
-      <button class="prev">Previous</button>
-      <button class="play">Play/Pause</button>
-      <button class="next">Next</button>
-      <input type="range" class="volume" value="50" />
-      <input type="range" class="seek" value="0" />
+      <div class="controls">
+        <button class="prev">Previous</button>
+        <button class="play">Play/Pause</button>
+        <button class="next">Next</button>
+      </div>
 
-      <span class="current-time">0:00</span>
-      <span class="duration">0:00</span>
+      <div class="sliders">
+        <div class="slider">
+          <label for="volume">Volume:</label>
+          <input type="range" id="volume" class="volume" value="50" />
+        </div>
+
+        <div class="slider">
+          <label for="seek">Seek:</label>
+          <input type="range" id="seek" class="seek" value="0" />
+          <span class="current-time">0:00</span>
+          <span class="duration">0:00</span>
+        </div>
+      </div>
     </div>
+
     <audio class="audio" preload="auto"></audio>
     <script src="/script.js"></script>
     <input
