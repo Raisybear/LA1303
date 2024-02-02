@@ -64,16 +64,9 @@ input[type="file"] {
   flex: 1;
 }
 
-
 .containerGoober {
   position: relative;
   margin-top: auto;
-}
-
-footer {
-  text-align: center;
-  position: absolute;
-  top: 5px;
 }
 
 .imagefooter {
@@ -148,4 +141,26 @@ header {
   position: relative;
   text-align: center;
   font-size: 15px;
+}
+
+footer {
+  position: relative;
+  margin-top: auto;
+  text-align: center;
+  background: url("https://img.freepik.com/vektoren-kostenlos/hellblauer-marmor-textur-stein-banner-design_1017-40688.jpg?w=1480&t=st=1706869879~exp=1706870479~hmac=1b1c94309c77e9de66e71da74af651c2703430dd95c926f9145d3156e29c021a")
+    no-repeat center center/cover;
+  max-width: 100%;
+  padding: 16px;
+}
+
+#Footertext {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+#Bild {
+  max-width: 100%;
 }
