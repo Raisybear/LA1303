@@ -60,13 +60,19 @@ input[type="range"] {
   font-size: 16px;
 }
 
-footer {
-  position: relative;
+.containerfooter {
   text-align: center;
-  background-color: #a7e2e6;
-  padding: 30px;
-  margin-top: auto;
-  box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.textfooter {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.imagefooter {
+  max-width: 100%;
+  height: auto;
 }
 
 header {
