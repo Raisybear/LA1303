@@ -14,6 +14,7 @@ nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
+  font-family: arial, "lucida console", sans-serif;
 }
 
 .content {
@@ -22,9 +23,18 @@ nav ul {
 
 .player {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-top: 50px;
+  font-family: arial, "lucida console", sans-serif;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  font-family: arial, "lucida console", sans-serif;
 }
 
 button {
@@ -32,19 +42,27 @@ button {
   padding: 10px;
   font-size: 16px;
   cursor: pointer;
+  font-family: arial, "lucida console", sans-serif;
+}
+
+.sliders {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: arial, "lucida console", sans-serif;
+}
+
+.slider {
+  margin: 10px 0;
+  font-family: arial, "lucida console", sans-serif;
+}
+
+label {
+  margin-right: 10px;
 }
 
 input[type="range"] {
-  margin: 0 10px;
   width: 200px;
-}
-
-.play {
-  margin: 0 10px;
-  padding: 10px;
-  font-size: 16px;
-  width: 120px;
-  cursor: pointer;
 }
 
 .current-time,
