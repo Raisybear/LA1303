@@ -10,6 +10,12 @@ body {
   background-color: #dde7ea;
 }
 
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 .content {
   flex: 1;
 }
