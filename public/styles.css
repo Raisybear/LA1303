@@ -40,6 +40,55 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+}
+
+.slider {
+  margin: 10px 0;
+  display: flex;
+}
+
+label {
+  margin-right: 10px;
+}
+
+input[type="file"] {
+  width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #dde7ea;
+}
+
+.content {
+  flex: 1;
+}
+
+.player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+button {
+  margin: 0 10px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.sliders {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .slider {
@@ -74,6 +123,27 @@ footer {
 .imagefooter {
   max-width: 100%;
   height: 15%;
+}
+
+.current-time,
+.duration {
+  margin: 0 10px;
+  font-size: 16px;
+}
+
+.containerfooter {
+  text-align: center;
+}
+
+.textfooter {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.imagefooter {
+  max-width: 100%;
+  height: auto;
 }
 
 header {
