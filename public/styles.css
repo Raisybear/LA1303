@@ -96,3 +96,10 @@ header {
   padding: 10px;
   font-family: arial, "lucida console", sans-serif;
 }
+
+#aboutText {
+  position: relative;
+  text-align: center;
+  font-family: arial, "lucida console", sans-serif;
+  font-size: 15px;
+}
