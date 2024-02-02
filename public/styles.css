@@ -14,6 +14,7 @@ nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
+  font-family: arial, "lucida console", sans-serif;
 }
 
 .content {
@@ -53,6 +54,7 @@ button {
 
 .slider {
   margin: 10px 0;
+  font-family: arial, "lucida console", sans-serif;
 }
 
 label {
