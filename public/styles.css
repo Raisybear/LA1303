@@ -1,3 +1,18 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+}
+
 .player {
   display: flex;
   align-items: center;
@@ -32,5 +47,9 @@ input[type="range"] {
 }
 
 footer {
-  align-items: center;
+  position: relative;
+  text-align: center;
+  background-color: #a7e2e6;
+  padding: 30px;
+  margin-top: auto;
 }
