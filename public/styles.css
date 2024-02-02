@@ -84,7 +84,7 @@ header {
   background-color: #a7e2e6;
   padding: 10px;
   background: linear-gradient(to left, #a6e1e5, #41b2d6);
-  border-top: 3px solid #9245f0;
+  border-top: 3px solid #632ea4;
 }
 
 .TopBar {
@@ -98,7 +98,7 @@ header {
   position: relative;
   list-style: none;
   text-align: center;
-  border-bottom: 3px solid #9245f0;
+  border-bottom: 3px solid #632ea4;
 }
 
 .TopBar li {
