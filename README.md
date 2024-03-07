@@ -72,4 +72,4 @@ Wie wollen einen Musikplayer erstellen, man sollte Musik abspielen, pausieren, v
 
 ### Testbericht
 
-Das Projekt funktioniert ziemlich fehlerfrei.
+Das Projekt funktioniert ziemlich fehlerfrei. Es konnten Alle funktionen umgesetzt werden.
